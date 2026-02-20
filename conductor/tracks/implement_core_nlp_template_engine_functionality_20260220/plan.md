@@ -11,8 +11,8 @@ This plan outlines the steps to implement the core functionality of the NLP Temp
     - [ ] Write Tests: For a function that tokenizes and normalizes input text.
     - [ ] Implement Feature: Create a `parser.py` module with basic text processing capabilities.
 - [ ] Task: Develop Workflow Classifier Stub
-    - [ ] Write Tests: For a function that takes parsed text and returns a dummy workflow type.
-    - [ ] Implement Feature: Create a `classifier.py` module with a placeholder classification logic.
+    - [ ] Write Tests: For a function that takes parsed text and uses `llm_classify` from `LLMTextualAnswer` to return a workflow type.
+    - [ ] Implement Feature: Create a `classifier.py` module that utilizes `llm_classify` from the `LLMTextualAnswer` package for workflow classification.
 - [ ] Task: Conductor - User Manual Verification 'Basic Input Processing and Workflow Classification' (Protocol in workflow.md)
 
 ## Phase 2: Template Management and Code Generation
@@ -21,8 +21,8 @@ This plan outlines the steps to implement the core functionality of the NLP Temp
     - [ ] Write Tests: For functions that can add, retrieve, and list templates.
     - [ ] Implement Feature: Create a `template_manager.py` module to handle template storage (e.g., in JSON files).
 - [ ] Task: Implement Parameter Extraction
-    - [ ] Write Tests: For a function that identifies key parameters in parsed natural language input.
-    - [ ] Implement Feature: Enhance `parser.py` to extract parameters relevant for template population.
+    - [ ] Write Tests: For a function that identifies key parameters in parsed natural language input using `llm_textual_answer`.
+    - [ ] Implement Feature: Enhance `parser.py` to extract parameters relevant for template population, utilizing `llm_textual_answer` from the `LLMTextualAnswer` package.
 - [ ] Task: Develop Basic Code Generator
     - [ ] Write Tests: For a function that takes a template and parameters, and generates a code string.
     - [ ] Implement Feature: Create a `code_generator.py` module to populate and return code from templates.

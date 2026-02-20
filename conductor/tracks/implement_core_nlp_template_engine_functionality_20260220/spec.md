@@ -27,3 +27,8 @@ This track focuses on establishing the foundational components of the NLP Templa
 - Complex error handling for malformed natural language inputs.
 - Support for multiple output programming languages (initial focus on Python).
 - Comprehensive testing for all possible workflow combinations.
+
+## External Libraries
+- **LLMTextualAnswer Package:** This package will be utilized for advanced NLP tasks.
+    - `llm_textual_answer` function: To be used for extracting parameters from natural language input and potentially for generating more complex textual outputs.
+    - `llm_classify` function: To be used for classifying the workflow type.
