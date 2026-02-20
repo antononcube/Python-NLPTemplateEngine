@@ -21,7 +21,7 @@ and the WL paclet
 
 An alternative, more comprehensive approach to building workflows code is given in [AAp2].
 Another alternative is to use few-shot training of LLMs with examples provided by, say,
-the Raku package ["DSL::Examples"](https://raku.land/zef:antononcube/DSL::Examples), [AAp3].
+the Python package ["DSLExamples"](https://pypi.org/project/DSLExamples), [AAp5].
 
 ### Problem formulation
 
@@ -276,7 +276,12 @@ concretize(cmd, template = "SendMail", lang = 'WL')
 
 ## References
 
-### Articles
+### Articles, blog posts
+
+[AA1] Anton Antonov,
+["DSL examples with LangChain"](https://pythonforprediction.wordpress.com/2026/02/12/dsl-examples-with-langchain/),
+(2026),
+[PythonForPrediction at WordPress](https://pythonforprediction.wordpress.com).
 
 [Wk1] Wikipedia entry, [Template processor](https://en.wikipedia.org/wiki/Template_processor).
 
@@ -307,6 +312,11 @@ concretize(cmd, template = "SendMail", lang = 'WL')
 [AAp4] Anton Antonov,
 [ML::TemplateEngine, Raku package](https://github.com/antononcube/Raku-ML-TemplateEngine),
 (2023-2025),
+[GitHub/antononcube](https://github.com/antononcube).
+
+[AAp5] Anton Antonov,
+[DSLExamples, Python package](https://github.com/antononcube/Python-DSLExamples),
+(2026),
 [GitHub/antononcube](https://github.com/antononcube).
 
 [WRI1] Wolfram Research,
