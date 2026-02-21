@@ -49,7 +49,7 @@ def get_specs(spec_type: str = "standard") -> Dict[str, Any]:
 
 
 def _normalize_lang(lang: str) -> str:
-    return (lang or "").strip().lower() or "raku"
+    return (lang or "").strip().lower() or "python"
 
 
 def _syntax_for_lang(lang: str) -> Dict[str, str]:
@@ -88,7 +88,7 @@ def _syntax_for_lang(lang: str) -> Dict[str, str]:
         },
     }
 
-    return syntax.get(_normalize_lang(lang), syntax["raku"])
+    return syntax.get(_normalize_lang(lang), syntax["python"])
 
 
 def _coerce_answer(param: str, ans: str, param_type_patterns: Mapping[str, Any], syntax: Mapping[str, str]) -> str:
@@ -145,7 +145,7 @@ def _final_template_adjustments(template: str) -> str:
 def concretize(
     command: str,
     template: str | None = None,
-    lang: str = "WL",
+    lang: str = "Python",
     avoid_monads: bool = False,
     format: str = "dict",
     user_id: str = "",
