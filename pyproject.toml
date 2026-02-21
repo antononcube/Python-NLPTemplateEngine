@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NLPTemplateEngine"
+version = "0.1.0"
+description = "Natural Language Processing template engine for workflow code generation."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+homepage = "https://github.com/antononcube/Python-NLPTemplateEngine"
