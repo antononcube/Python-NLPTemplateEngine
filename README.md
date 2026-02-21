@@ -74,7 +74,7 @@ llm = ChatOllama(model=os.getenv("OLLAMA_MODEL", "gemma3:12b"))
 
 ## Usage examples
 
-### Quantile Regression (WL)
+### Quantile Regression (Python)
 
 Here the template is automatically determined:
 
@@ -89,12 +89,11 @@ concretize(qrCommand, llm=llm)
 ```
 
 ```
-# qrObj=
-# QRMonUnit[dfTempBoston]⟹
-# QRMonEchoDataSummary[]⟹
-# QRMonQuantileRegression[12, {0.4,0.6}, InterpolationOrder->2]⟹
-# QRMonPlot["DateListPlot"->False,PlotTheme->"Detailed"]⟹
-# QRMonErrorPlots["RelativeErrors"->False,"DateListPlot"->False,PlotTheme->"Detailed"];
+# qrObj = (Regressionizer(dfTempBoston)
+# .echo_data_summary()
+# .quantile_regression(knots = 12, probs = 0.4, 0.6, order = 2)
+# .plot(date_plot = False)
+# .error_plots(relative_errors = False, date_plot = False))
 ```
 
 **Remark:** In the code above the template type, "QuantileRegression", was determined using an LLM-based classifier.
@@ -137,7 +136,7 @@ concretize(command, template = 'RandomTabularDataset', lang = 'Raku', llm=llm)
 
 **Remark:** In the code above it was specified to use Google's Gemini LLM service.
 
-### Recommender workflow (Raku)
+### Recommender workflow (Python)
 
 ```python
 command = """
@@ -148,12 +147,12 @@ concretize(command, lang = 'Python', llm=llm)
 ```
 
 ```
-# my $smrObj = ML::SparseMatrixRecommender.new
-# .create-from-wide-form(@dsTitanic, item-column-name='id', :add-tag-types-to-column-names, tag-value-separator=':')
-# .apply-term-weight-functions('IDF', 'None', 'Cosine')
-# .recommend-by-profile(["passengerSex:male", "passengerClass:2nd"], 8, :!normalize)
-# .join-across(@dsTitanic)
-# .echo-value();
+# smrObj = (SparseMatrixRecommender()
+# .create_from_wide_form(data = dsTitanic, item_column_name='id', columns=None, add_tag_types_to_column_names=True, tag_value_separator=':')
+# .apply_term_weight_functions(global_weight_func = 'IDF', local_weight_func = 'None', normalizer_func = 'Cosine')
+# .recommend_by_profile(profile=(passengerSex:male, passengerClass:2nd), nrecs=8)
+# .join_across(data=dsTitanic, on='id')
+# .echo_value())
 ```
 
 ------
