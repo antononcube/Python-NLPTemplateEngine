@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "NLPTemplateEngine"
-version = "0.1.0"
+version = "0.1.1"
 description = "Natural Language Processing template engine for workflow code generation."
 readme = "README.md"
 license = { file = "LICENSE" }
