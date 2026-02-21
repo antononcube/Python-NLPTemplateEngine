@@ -53,6 +53,21 @@ From Zef ecosystem:
 python3 -m pip install NLPTemplateEngine
 ```
 
+----
+
+## Setup
+
+Load packages and define LLM access objects:
+
+```python
+from NLPTemplateEngine import *
+from langchain_ollama import ChatOllama
+import os
+
+
+llm = ChatOllama(model=os.getenv("OLLAMA_MODEL", "gemma3:12b"))
+```
+
 -----
 
 ## Usage examples
@@ -68,7 +83,7 @@ qrCommand = """
 Compute quantile regression with probabilities 0.4 and 0.6, with interpolation order 2, for the dataset dfTempBoston.
 """
 
-concretize(qrCommand)
+concretize(qrCommand, llm=llm)
 ```
 
 ```
@@ -111,7 +126,7 @@ command = """
 Make random table with 6 rows and 4 columns with the names <A1 B2 C3 D4>.
 """
 
-concretize(command, template = 'RandomTabularDataset', lang = 'Raku', llm = 'ollama')
+concretize(command, template = 'RandomTabularDataset', lang = 'Raku', llm=llm)
 ```
 
 ```
@@ -127,7 +142,7 @@ command = """
 Make a commander over the data set @dsTitanic and compute 8 recommendations for the profile (passengerSex:male, passengerClass:2nd).
 """
 
-concretize(command, lang = 'Raku')
+concretize(command, lang = 'Python', llm=llm)
 ```
 
 ```
@@ -229,7 +244,7 @@ dsSendMail.describe()
 **2.** Add the ingested data for the new workflow (from the CSV file) into the NLP-Template-Engine:
 
 ```python
-add_template_data(dsSendMail)
+add_template_data(dsSendMail, llm=llm)
 ```
 
 ```
@@ -240,7 +255,7 @@ add_template_data(dsSendMail)
 
 ```python
 cmd = "Send email to joedoe@gmail.com with content RandomReal[343], and the subject this is a random real call."
-concretize(cmd, template = "SendMail", lang = 'WL') 
+concretize(cmd, template = "SendMail", lang = 'WL', llm=llm) 
 ```
 
 ```
