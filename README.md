@@ -23,6 +23,8 @@ An alternative, more comprehensive approach to building workflows code is given 
 Another alternative is to use few-shot training of LLMs with examples provided by, say,
 the Python package ["DSLExamples"](https://pypi.org/project/DSLExamples), [AAp5].
 
+**Remark:** See the [vignette notebook](https://github.com/antononcube/Python-NLPTemplateEngine/blob/main/docs/NLPTemplateEngine-vignette.ipynb) corresponding to this README file. 
+
 ### Problem formulation
 
 We want to have a system (i.e. TE) that:
